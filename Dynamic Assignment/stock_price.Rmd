@@ -1,0 +1,30 @@
+---
+title: "Stock price"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(plotly)
+```
+
+
+
+```{r}
+dat1<-(read_csv("stock_price.csv")
+       %>% select(c(Company,Date,Adj_Close)))
+head(dat1)
+```
+
+
+
+```{r}
+gg1<-(ggplot(dat1,aes(x=Date,y=Adj_Close,colour=Company))+
+        geom_line()
+)
+ggp1<-ggplotly(gg1)
+ggp1
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
