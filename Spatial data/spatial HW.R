@@ -13,9 +13,9 @@ leaflet(options = leafletOptions(minZoom = 0, maxZoom = 15))
 mapStates = map("state", fill = TRUE, plot = FALSE)
 leaflet(data = mapStates) %>% addTiles() %>%
   addPolygons(fillColor = topo.colors(10), stroke = FALSE)
-
-leaflet() %>% addTiles() %>% setView(-93.65, 42.0285, zoom = 5) %>%
-  ## Zoom=5 should be a proper size for this plot
+  ## colours are used to do a fill in different states
+leaflet() %>% addTiles() %>% setView(-100, 50, zoom = 5) %>%
+  ## Zoom=5 should be a proper size for this plot, the area selected for plotting is approximated with where the country is located.
   addWMSTiles(
     "http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi",
     layers = "nexrad-n0r-900913",
