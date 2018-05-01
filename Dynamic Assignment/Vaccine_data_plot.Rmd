@@ -3,13 +3,17 @@ title: "Vaccine data plot"
 output: html_document
 ---
 
+**BMB**: I wouldn't use `include=FALSE` here. Good to
+be explicit about which packages you're using (this won't
+show up in the document)
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(plotly)
 ```
 
-
+**BMB**: it's best practice to name all your chunks
 
 ```{r}
 dat1<-(read_csv("vaccine_data_online.csv")
