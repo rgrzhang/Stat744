@@ -12,10 +12,14 @@ library(maps)
 leaflet(options = leafletOptions(minZoom = 0, maxZoom = 15))
 
 mapStates = map("states", fill = TRUE, plot = FALSE)
-leaflet(data = mapStates) %>% addTiles() %>%
-  spatialpolygons(fillColor = topo.colors(10), stroke = FALSE)
+leaflet(data = mapStates) 
+addTiles()
+for (i in 1:length(vary_p))
+  spatialpolygons(fillColor = i, stroke = FALSE)
   ## colours are used to do a fill in different states with spatial polygons.
-leaflet() %>% addTiles() %>% setView(-100, 50, zoom = 5) %>%
+
+## Now do a plot for weather. 
+leaflet()  addTiles() %>% setView(-100, 50, zoom = 5)
   ## Zoom=5 should be a proper size for this plot, the area selected for plotting is approximated with where the country is located.
   addWMSTiles(
     "http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi",
