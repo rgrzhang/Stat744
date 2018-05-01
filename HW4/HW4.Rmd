@@ -1,0 +1,40 @@
+---
+title: "HW4"
+author: "RogerZhang"
+date: "2018/2/24"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Plot Forest fire with Wind strength on Y axis, different week days on x axis.
+```{r}
+library(ggplot2)
+library(base)
+ggplot(data=forestfires, mapping=aes(x=day, fill=factor(forestfires$wind)))+
+  geom_bar()
+```
+## We may conclude that wind is not a factor with respect to which day the forest fire is occuring.
+
+
+## Forestfire boxplot
+```{r}
+library(ggplot2)
+library(base)
+
+ggplot(data=forestfires, mapping=aes(group=day, x=day, y=temp))+
+  geom_boxplot()
+```
+## Boxplots tell us the range of temperature forest fires occured in. Again, separated by day, not dates. Dates are a bit hard to be used as they have letters for 12 months.
+
+
+## Forest fire month vs RH values
+```{r}
+library(ggplot2)
+library(base)
+ggplot(data=forestfires, mapping=aes(group=month, x=month, y=RH))+
+  geom_violin()
+```
+## We can see a range of RH values correspond to different months. However, no such value exist for November and January.
