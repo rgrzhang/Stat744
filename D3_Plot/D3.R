@@ -1,8 +1,10 @@
 library(networkD3)
 source <- c("chicago", "newyork", "boston", "newyork", "newyork", "boston", "newyork", "newyork", "boston")
+## Sources are starting cities.
 target <- c("newyork", "chicago", "newyork", "altanta", "cleveland", "seattle", "seattle", "miami", "miami")
+## Targets are ending cities.
 networkData <- data.frame(source, target)
-simpleNetwork(Data = networkData, 
+simpleNetwork(Data = networkData,  ## The following are just characteristics of font/size/nodes/links....
               Source = 1, 
               Target = 2,
               opacity = 1,
