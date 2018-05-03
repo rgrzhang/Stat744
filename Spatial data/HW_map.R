@@ -14,13 +14,19 @@ leaflet(options = leafletOptions(minZoom = 0, maxZoom = 15))
 StatesofUS = map("states", fill = TRUE, plot = FALSE)
 leaflet(data = StatesofUS) 
 addTiles()
-for (i in 1:length(vary_p))
-  spatialpolygons(fillColor = i)
+addPolylines()
+## Add default OpenStreetMap map tiles
+addMarkers(lng=-150, lat=100)
+
+for (i in 1:length(vary_state))
+  addpolygons(fillColor = i)
   ## colours are used to do a fill in different states with spatial polygons.
 
 ## Now do a plot for weather. 
 leaflet()  
 addTiles()
+addPolylines()
+addMarkers(lng=-150, lat=100)
 setView(-100, 50, zoom = 5)
   ## The area selected for plotting is approximated with where the country is located.
   addWMSTiles(
