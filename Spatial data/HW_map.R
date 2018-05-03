@@ -37,4 +37,4 @@ setView(-100, 50, zoom = 5)
   )
 
 ## I made the plot for different states and weather informations separately.
-## I got this date by suggestion from Yicheng.
+## I got this data by suggestion from Yicheng.
