@@ -1,0 +1,16 @@
+## BMB: avoid file names with spaces in them!
+library(aplpack)
+
+## BMB: good practice to cache a version of the data set in case
+##  the original source goes away (or no network connection)
+sunelement <- sun_data
+
+sunelement[1:4,]
+
+faces(sunelement[,2:7])
+sunelement_filled <- cbind(sunelement[,2:5])
+## Ref: Tutorial from website: https://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/
+## Ref: data taken from :http://vanwardstat.com/backup/chernoff.htm
+## BMB: does alphabetical order make sense?
+##  is there a way to add a legend? printing out the associations separately
+##  is OK, but seems clunky
