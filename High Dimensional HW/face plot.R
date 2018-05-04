@@ -9,6 +9,8 @@ crime[1:6,]
 faces(crime[,2:8])
 crime_filled <- cbind(crime[,1:6], rep(0, length(crime$state)), crime[,7:8])
 faces(crime_filled[,2:8], labels=crime_filled$state)
+## Ref: Tutorial from website: https://flowingdata.com/2010/08/31/how-to-visualize-data-with-cartoonish-faces/
+
 ## BMB: does alphabetical order make sense?
 ##  is there a way to add a legend? printing out the associations separately
 ##  is OK, but seems clunky

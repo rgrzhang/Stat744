@@ -3,7 +3,7 @@ source <- c("chicago", "newyork", "boston", "newyork", "newyork", "boston", "new
 ## Sources are starting cities.
 target <- c("newyork", "chicago", "newyork", "altanta", "cleveland", "seattle", "seattle", "miami", "miami")
 ## Targets are ending cities.
-networkData <- data.frame(source, target)
+networkData <- data.frame(source, target) ## dataframe is basically taking the source and target being diffrent endpoint and nodes between them.
 simpleNetwork(Data = networkData,  ## The following are just characteristics of font/size/nodes/links....
               Source = 1, 
               Target = 2,
